@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="1. Hina's Cool Palace Woo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Bh-Pka">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" text="1. Hina's Cool Palace Woo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Bh-Pka">
                                                     <rect key="frame" x="81" y="3" width="176" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -87,6 +87,7 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oMX-Il-Iad" secondAttribute="bottom" constant="12" id="E9m-It-3cH"/>
                                                 <constraint firstItem="dSm-v5-1WQ" firstAttribute="top" secondItem="DOR-Bh-Pka" secondAttribute="bottom" constant="8" id="WHR-3Q-MZx"/>
                                                 <constraint firstItem="luV-oa-9cM" firstAttribute="top" secondItem="gTP-Ak-N9H" secondAttribute="top" constant="8" id="Wfz-82-R6P"/>
+                                                <constraint firstItem="Ofr-t2-iRO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DOR-Bh-Pka" secondAttribute="trailing" constant="10" id="cXe-Gh-gLq"/>
                                                 <constraint firstItem="LVT-my-t96" firstAttribute="centerY" secondItem="dSm-v5-1WQ" secondAttribute="centerY" id="jK2-w8-hJe"/>
                                                 <constraint firstItem="dSm-v5-1WQ" firstAttribute="leading" secondItem="DOR-Bh-Pka" secondAttribute="leading" id="pVU-tt-XcC"/>
                                                 <constraint firstAttribute="trailing" secondItem="XKU-CA-i7L" secondAttribute="trailing" constant="8" id="sgA-ut-7pc"/>
@@ -121,6 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gYc-KW-ueg">
                         <barButtonItem key="leftBarButtonItem" title="Filters" id="JH7-k0-WP0">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="qvU-v3-X3G" kind="modal" id="9TC-9V-aTD"/>
                             </connections>
@@ -150,8 +152,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickerCell" rowHeight="55" id="BNT-i6-atd" customClass="PickerViewCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BNT-i6-atd" id="mof-84-qvS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2L-Lp-NfW">
+                                                    <rect key="frame" x="10" y="11" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYD-ch-sKM">
+                                                    <rect key="frame" x="137" y="-86" width="150" height="216"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="d2L-Lp-NfW" firstAttribute="leading" secondItem="mof-84-qvS" secondAttribute="leading" constant="10" id="boy-gu-2Jq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pickerLabel" destination="d2L-Lp-NfW" id="k30-1L-81g"/>
+                                            <outlet property="pickerView" destination="cYD-ch-sKM" id="1da-1p-UhH"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="Nie-x8-98d" customClass="SwitchCell" customModule="Yelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="147" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nie-x8-98d" id="Mu9-oX-Xsn">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -191,11 +219,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="1uk-kM-mc9">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ZBh-lf-E63">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onCancelButton:" destination="7tW-Oa-FHv" id="FUe-yI-d4q"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="ok0-df-b3a">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onSearchButton:" destination="7tW-Oa-FHv" id="myH-v8-6k0"/>
                             </connections>

@@ -23,6 +23,8 @@ class SwitchCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         filterSwitch.addTarget(self, action: "switchValueChanged", forControlEvents: UIControlEvents.ValueChanged)
+        filterSwitch.onTintColor = UIColor(hue: 0.0833, saturation: 0.61, brightness: 0.95, alpha: 1.0) /* #f2a85e */
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
