@@ -9,16 +9,19 @@
 import UIKit
 
 @objc protocol PickerViewCellDelegate {
-    optional func pickerViewCell(pickerViewCell: PickerViewCell, didChangeValue value:Bool)
+    optional func pickerViewCell(pickerViewCell: PickerViewCell, didChangeValue value:Int)
 }
+
 class PickerViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var pickerLabel: UILabel!
+    var selectedIndex: Int!
+    
+    weak var PVdelegate:PickerViewCellDelegate?
     
     var choices: [String]! {
         didSet{
-            print("hello \(choices)")
             pickerView.reloadAllComponents()
         }
     }
@@ -46,9 +49,12 @@ class PickerViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDeleg
         return choices[row]
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        if (PVdelegate != nil){
+            PVdelegate?.pickerViewCell?(self, didChangeValue: row)
+        }
     }
+
 
 }

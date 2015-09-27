@@ -36,21 +36,11 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             self.tableView.estimatedRowHeight = 200
             
             
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
-        })
-
-        
-//        Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
-//            self.businesses = businesses
-//            self.tableView.reloadData()
 //            for business in businesses {
 //                print(business.name!)
 //                print(business.address!)
 //            }
-//        }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,7 +92,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
 //            return range.location != NSNotFound
 //        })
         
-        Business.searchWithTerm(searchText, sort: nil, categories: nil, deals: nil) { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm(searchText, sort: nil, categories: nil, deals: nil, radius:nil) { (businesses: [Business]!, error: NSError!) -> Void in
             print("these are the /(businesses) chosen ones")
             self.businesses = businesses
             self.tableView.reloadData()
@@ -124,8 +114,29 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func filterViewController(filterViewController: FilterViewController, didUpdateFilters filters: [String : AnyObject]) {
-        var categories = filters["categories"] as? [String]
-        Business.searchWithTerm("Restaurants", sort: nil, categories: categories, deals: nil) { (businesses: [Business]!, error: NSError!) -> Void in
+        
+        let categories = filters["categories"] as? [String]
+        
+        let deals = filters["deals"] as? Bool
+        
+        let rawVal = filters["sortBy"] as? Int
+        let sort = YelpSortMode(rawValue:rawVal!)
+        print(sort)
+        
+        let radiusIndex = filters["distance"] as? Int
+        
+        var radius : Float = 0.3
+        if radiusIndex == 0 {
+            radius = 0.3
+        } else if radiusIndex == 1 {
+            radius = 1
+        } else if radiusIndex == 2 {
+            radius = 5
+        } else {
+            radius = 10
+        }
+        
+        Business.searchWithTerm("Restaurants", sort: sort, categories: categories, deals: deals, radius: radius) { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             self.tableView.reloadData()
         }
