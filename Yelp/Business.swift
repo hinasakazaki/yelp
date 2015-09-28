@@ -28,6 +28,7 @@ class Business: NSObject {
         }
         
         let location = dictionary["location"] as? NSDictionary
+        
         var address = ""
         if location != nil {
             let addressArray = location!["address"] as? NSArray
@@ -67,6 +68,7 @@ class Business: NSObject {
         }
         
         let ratingImageURLString = dictionary["rating_img_url_large"] as? String
+        
         if ratingImageURLString != nil {
             ratingImageURL = NSURL(string: ratingImageURLString!)
         } else {

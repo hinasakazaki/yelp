@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="115" id="BDq-ec-ATE" customClass="BusinessViewCell" customModule="Yelp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="115" id="BDq-ec-ATE" customClass="BusinessViewCell" customModule="Yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BDq-ec-ATE" id="gTP-Ak-N9H">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" text="1. Hina's Cool Palace Woo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOR-Bh-Pka">
@@ -103,6 +103,7 @@
                                             <outlet property="ratingImageView" destination="dSm-v5-1WQ" id="OmQ-Rk-xFf"/>
                                             <outlet property="reviewCount" destination="LVT-my-t96" id="b01-kF-qbw"/>
                                             <outlet property="thumbnailView" destination="luV-oa-9cM" id="cQZ-K2-doS"/>
+                                            <segue destination="2by-Hf-DZR" kind="push" identifier="DetailViewSegue" id="0Zi-sa-Tpc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,7 +125,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Filters" id="JH7-k0-WP0">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="qvU-v3-X3G" kind="modal" id="9TC-9V-aTD"/>
+                                <segue destination="qvU-v3-X3G" kind="modal" identifier="FilterSegue" id="9TC-9V-aTD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -276,5 +277,91 @@
             </objects>
             <point key="canvasLocation" x="1847" y="338"/>
         </scene>
+        <!--Business Detail View Controller-->
+        <scene sceneID="Ilc-gb-ofy">
+            <objects>
+                <viewController id="2by-Hf-DZR" customClass="BusinessDetailViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hIQ-jA-cNg"/>
+                        <viewControllerLayoutGuide type="bottom" id="1NJ-EJ-hch"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cZN-Vm-x1B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Imm Thai Food" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4g-BN-GvU">
+                                <rect key="frame" x="14" y="315" width="282" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0.2 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XV-oe-IFd">
+                                <rect key="frame" x="263" y="320" width="44" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTx-yP-K33">
+                                <rect key="frame" x="289" y="345" width="18" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="teO-83-jcy">
+                                <rect key="frame" x="0.0" y="64" width="320" height="244"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9af-vr-P7f">
+                                <rect key="frame" x="14" y="416" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiA-ld-RRu">
+                                <rect key="frame" x="14" y="440" width="282" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncp-aZ-EGi">
+                                <rect key="frame" x="14" y="374" width="146" height="28"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="243 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z8-21-QFp">
+                                <rect key="frame" x="168" y="377" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ncp-aZ-EGi" firstAttribute="leading" secondItem="F4g-BN-GvU" secondAttribute="leading" id="D4b-BR-MJ4"/>
+                            <constraint firstItem="iiA-ld-RRu" firstAttribute="leading" secondItem="cZN-Vm-x1B" secondAttribute="leading" constant="14" id="FjC-uO-lhq"/>
+                            <constraint firstAttribute="trailing" secondItem="wTx-yP-K33" secondAttribute="trailing" constant="13" id="HbA-gr-L9C"/>
+                            <constraint firstItem="ncp-aZ-EGi" firstAttribute="leading" secondItem="cZN-Vm-x1B" secondAttribute="leading" constant="14" id="IEF-J4-72S"/>
+                            <constraint firstItem="9af-vr-P7f" firstAttribute="leading" secondItem="cZN-Vm-x1B" secondAttribute="leading" constant="14" id="Icn-wl-3a7"/>
+                            <constraint firstAttribute="trailing" secondItem="1XV-oe-IFd" secondAttribute="trailing" constant="13" id="L6K-LE-JuX"/>
+                            <constraint firstItem="9af-vr-P7f" firstAttribute="leading" secondItem="F4g-BN-GvU" secondAttribute="leading" id="PJL-pS-mkl"/>
+                            <constraint firstItem="iiA-ld-RRu" firstAttribute="leading" secondItem="F4g-BN-GvU" secondAttribute="leading" id="XaF-NV-rpv"/>
+                            <constraint firstItem="F4g-BN-GvU" firstAttribute="leading" secondItem="cZN-Vm-x1B" secondAttribute="leading" constant="14" id="hJc-tw-OzN"/>
+                            <constraint firstItem="6Z8-21-QFp" firstAttribute="centerY" secondItem="ncp-aZ-EGi" secondAttribute="centerY" id="kzo-pH-yNY"/>
+                            <constraint firstItem="wTx-yP-K33" firstAttribute="trailing" secondItem="1XV-oe-IFd" secondAttribute="trailing" id="msg-DH-puo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aln-ul-aCG"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="iiA-ld-RRu" id="mMr-dl-jxJ"/>
+                        <outlet property="businessImage" destination="teO-83-jcy" id="XHh-yp-2au"/>
+                        <outlet property="businessName" destination="F4g-BN-GvU" id="6Su-0k-A8Q"/>
+                        <outlet property="categoryLabel" destination="9af-vr-P7f" id="CFo-VR-pvr"/>
+                        <outlet property="distanceLabel" destination="1XV-oe-IFd" id="eV7-Ju-txt"/>
+                        <outlet property="numReviewLabel" destination="6Z8-21-QFp" id="MF5-Sg-8Vw"/>
+                        <outlet property="starImageView" destination="ncp-aZ-EGi" id="ylb-bv-ybb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8b-Z6-67C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="1112"/>
+        </scene>
     </scenes>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

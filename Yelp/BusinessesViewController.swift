@@ -35,11 +35,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             self.tableView.rowHeight = UITableViewAutomaticDimension
             self.tableView.estimatedRowHeight = 200
             
-            
-//            for business in businesses {
-//                print(business.name!)
-//                print(business.address!)
-//            }
         })
     }
 
@@ -85,15 +80,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-//        filtered = data.filter({ (text) -> Bool in
-//            let tmp: NSString = text
-//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-//            return range.location != NSNotFound
-//        })
-        
         Business.searchWithTerm(searchText, sort: nil, categories: nil, deals: nil, radius:nil) { (businesses: [Business]!, error: NSError!) -> Void in
-            print("these are the /(businesses) chosen ones")
             self.businesses = businesses
             self.tableView.reloadData()
         }
@@ -107,10 +94,15 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let navigationController = segue.destinationViewController as! UINavigationController
-        let filterViewController = navigationController.topViewController as! FilterViewController
-        
-        filterViewController.delegate = self
+        if segue.identifier == "FilterSegue" {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let filterViewController = navigationController.topViewController as! FilterViewController
+            filterViewController.delegate = self
+        } else if segue.identifier == "DetailViewSegue" {
+            let vc = segue.destinationViewController as! BusinessDetailViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)            
+            let index = indexPath!.row
+            vc.business = self.businesses[index]        }
     }
     
     func filterViewController(filterViewController: FilterViewController, didUpdateFilters filters: [String : AnyObject]) {

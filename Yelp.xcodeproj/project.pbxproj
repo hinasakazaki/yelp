@@ -17,6 +17,7 @@
 		22AAAA991AEA0A9700A544AF /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAAA981AEA0A9700A544AF /* Business.swift */; };
 		22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */; };
 		2A2401611BB7485200BBEF6D /* PickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2401601BB7485200BBEF6D /* PickerViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		2A2401631BB8790E00BBEF6D /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2401621BB8790E00BBEF6D /* BusinessDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2AC5774C1BB62FA6000CE3DA /* BusinessViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5774B1BB62FA6000CE3DA /* BusinessViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2AC5774E1BB6578F000CE3DA /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5774D1BB6578F000CE3DA /* SwitchCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2AC577501BB65979000CE3DA /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC5774F1BB65979000CE3DA /* FilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -47,6 +48,7 @@
 		22AAAA981AEA0A9700A544AF /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesViewController.swift; sourceTree = "<group>"; };
 		2A2401601BB7485200BBEF6D /* PickerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewCell.swift; sourceTree = "<group>"; };
+		2A2401621BB8790E00BBEF6D /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
 		2AC5774B1BB62FA6000CE3DA /* BusinessViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessViewCell.swift; sourceTree = "<group>"; };
 		2AC5774D1BB6578F000CE3DA /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		2AC5774F1BB65979000CE3DA /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		22AAAA9D1AEA1EC600A544AF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A2401621BB8790E00BBEF6D /* BusinessDetailViewController.swift */,
 				2AC5774F1BB65979000CE3DA /* FilterViewController.swift */,
 				22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */,
 			);
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2401631BB8790E00BBEF6D /* BusinessDetailViewController.swift in Sources */,
 				2A2401611BB7485200BBEF6D /* PickerViewCell.swift in Sources */,
 				2AC577501BB65979000CE3DA /* FilterViewController.swift in Sources */,
 				22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */,
